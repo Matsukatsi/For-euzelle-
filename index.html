@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy 1st Monthsary 💜</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+#passcodeInput {
+    width: 80%;
+    max-width: 250px;
+    padding: 14px;
+    margin: 15px auto;
+    display: block;
+    border-radius: 15px;
+    border: 2px solid #b57edc;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 6px;
+    outline: none;
+}
+
+#wrongCode {
+    min-height: 20px;
+    font-size: 14px;
+}
+
+.memory-area {
+    display: none;
+    margin-top: 25px;
+}
+
+.memory-photo {
+    width: 100%;
+    max-width: 360px;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 22px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+    animation: photoReveal 0.8s ease;
+}
+
+@keyframes photoReveal {
+
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+.photo-number {
+    margin-top: 12px;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+#finalMessage {
+    display: none;
+    animation: finalReveal 1.5s ease;
+}
+
+@keyframes finalReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.final-heart {
+    font-size: 70px;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- MUSIC -->
+
+<audio id="loveMusic" src="love.mp3" preload="auto"></audio>
+
+
+<!-- INTRO -->
+
+<section id="intro" class="page active">
+
+<div class="card">
+
+<div class="heart">💜</div>
+
+<h3>For My Beautiful Girl</h3>
+
+<h1>Euzelle 💜</h1>
+
+<p>
+
+Every love story is beautiful...
+
+<br><br>
+
+but ours is my favorite.
+
+</p>
+
+<button id="startBtn">
+
+CLICK HERE 💌
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- MONTHSARY -->
+
+<section id="monthsary" class="page">
+
+<div class="card">
+
+<div class="heart">💜</div>
+
+<h1>
+
+Happy
+<br>
+1st Monthsary
+
+</h1>
+
+<h2>My Boss 💜</h2>
+
+<p>
+
+One month may not seem long...
+
+<br><br>
+
+but every moment with you
+became one of my favorite memories.
+
+<br><br>
+
+Thank you for making me smile
+every single day.
+
+</p>
+
+<button id="galleryBtn">
+
+Next 💜
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery" class="page">
+
+<div class="card">
+
+<h1>Our Beautiful Memories 📸</h1>
+
+<p>
+
+Every picture holds a little piece of us. 💜
+
+</p>
+
+
+<div class="gallery">
+
+<img src="B1.jpeg" alt="Photo 1">
+
+<img src="B2.jpeg" alt="Photo 2">
+
+<img src="B3.jpeg" alt="Photo 3">
+
+</div>
+
+
+<button id="letterBtn">
+
+Read My Letter 💌
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- LOVE LETTER -->
+
+<section id="letter" class="page">
+
+<div class="card">
+
+<div class="heart">💜</div>
+
+<h1>To My Boss 💜</h1>
+
+<p id="letterText"></p>
+
+
+<button id="surpriseBtn">
+
+One Last Surprise 🎁
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- SURPRISE -->
+
+<section id="surprise" class="page">
+
+<div class="card">
+
+<div class="heart">💜</div>
+
+<h1>Close your eyes... 💜</h1>
+
+<p>
+
+Take a deep breath...
+
+<br><br>
+
+and press the heart below.
+
+</p>
+
+
+<button id="heartBtn">
+
+❤️
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section id="final" class="page">
+
+<div class="card">
+
+
+<!-- I LOVE YOU -->
+
+<div id="loveReveal">
+
+<div class="final-heart">
+
+❤️
+
+</div>
+
+
+<h1>
+
+I LOVE YOU
+
+</h1>
+
+
+<h2>
+
+EUZELLE 💜
+
+</h2>
+
+
+<p>
+
+Happy First Monthsary.
+
+<br><br>
+
+Thank you for being
+one of the most beautiful
+parts of my life.
+
+<br><br>
+
+But...
+
+<br><br>
+
+I still have one last surprise
+for you. 💜
+
+</p>
+
+
+<!-- PASSCODE -->
+
+<h3>
+
+🔐 Secret Memories
+
+</h3>
+
+
+<p>
+
+Enter the secret passcode.
+
+</p>
+
+
+<input
+id="passcodeInput"
+type="password"
+inputmode="numeric"
+maxlength="6"
+placeholder="••••••"
+>
+
+
+<button id="unlockBtn">
+
+🔓 Unlock
+
+</button>
+
+
+<p id="wrongCode"></p>
+
+</div>
+
+
+<!-- MEMORY AREA -->
+
+<div
+id="memoryArea"
+class="memory-area"
+>
+
+<h2>
+
+Our Memories 📸
+
+</h2>
+
+
+<img
+id="memoryPhoto"
+class="memory-photo"
+src=""
+alt="Our Memory"
+>
+
+
+<div
+id="photoNumber"
+class="photo-number"
+>
+</div>
+
+
+<button id="nextPhoto">
+
+Next 💜
+
+</button>
+
+</div>
+
+
+<!-- FINAL MESSAGE -->
+
+<div id="finalMessage">
+
+<div class="final-heart">
+
+❤️
+
+</div>
+
+
+<h1>
+
+FOREVER & ALWAYS
+
+</h1>
+
+
+<h2>
+
+EUZELLE 💜
+
+</h2>
+
+
+<p>
+
+From our first month...
+
+<br><br>
+
+I hope this is only the beginning
+of many more memories together.
+
+<br><br>
+
+More laughs.
+<br>
+More dates.
+<br>
+More pictures.
+<br>
+More moments.
+
+<br><br>
+
+And most importantly...
+
+<br><br>
+
+<strong>
+
+More time loving you.
+
+</strong>
+
+<br><br>
+
+I love you so much, Boss. ❤️
+
+</p>
+
+
+<h3>
+
+Happy 1st Monthsary 💜
+
+</h3>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<script>
+
+
+/* ==========================
+PAGE SYSTEM
+========================== */
+
+function showPage(pageId) {
+
+document
+.querySelectorAll(".page")
+.forEach(function(page) {
+
+page.classList.remove("active");
+
+});
+
+
+document
+.getElementById(pageId)
+.classList.add("active");
+
+
+window.scrollTo(0,0);
+
+}
+
+
+/* ==========================
+INTRO + MUSIC
+========================== */
+
+document
+.getElementById("startBtn")
+.onclick = function() {
+
+
+var music =
+document.getElementById("loveMusic");
+
+
+music.currentTime = 0;
+
+
+music.play().catch(function(error) {
+
+console.log(
+"Music could not play:",
+error
+);
+
+});
+
+
+showPage("monthsary");
+
+};
+
+
+/* ==========================
+MONTHSARY
+========================== */
+
+document
+.getElementById("galleryBtn")
+.onclick = function() {
+
+showPage("gallery");
+
+};
+
+
+/* ==========================
+GALLERY
+========================== */
+
+document
+.getElementById("letterBtn")
+.onclick = function() {
+
+showPage("letter");
+
+typeLetter();
+
+};
+
+
+/* ==========================
+LETTER
+========================== */
+
+document
+.getElementById("surpriseBtn")
+.onclick = function() {
+
+showPage("surprise");
+
+};
+
+
+/* ==========================
+FINAL
+========================== */
+
+document
+.getElementById("heartBtn")
+.onclick = function() {
+
+showPage("final");
+
+/*
+Music continues playing.
+Hindi ito nire-restart.
+*/
+
+};
+
+
+/* ==========================
+PASSCODE
+========================== */
+
+var correctPasscode = "071226";
+
+
+document
+.getElementById("unlockBtn")
+.onclick = function() {
+
+
+var code =
+document
+.getElementById("passcodeInput")
+.value;
+
+
+var wrong =
+document
+.getElementById("wrongCode");
+
+
+if(code === correctPasscode) {
+
+
+document
+.getElementById("loveReveal")
+.style.display = "none";
+
+
+document
+.getElementById("memoryArea")
+.style.display = "block";
+
+
+wrong.innerHTML = "";
+
+
+showMemory(0);
+
+
+} else {
+
+
+wrong.innerHTML =
+"❌ Wrong passcode. Try again. 💜";
+
+
+document
+.getElementById("passcodeInput")
+.value = "";
+
+}
+
+};
+
+
+/* ==========================
+SECRET PHOTOS
+========================== */
+
+var memories = [
+
+"B5.jpeg",
+"B8.jpeg",
+"B6.jpeg",
+"B7.jpeg",
+"B4.jpeg",
+"B9.jpeg",
+"B10.jpeg",
+"B11.jpeg",
+"B12.jpeg"
+
+];
+
+
+var currentMemory = 0;
+
+
+function showMemory(index) {
+
+currentMemory = index;
+
+
+var photo =
+document.getElementById("memoryPhoto");
+
+
+photo.style.animation = "none";
+
+
+void photo.offsetWidth;
+
+
+photo.style.animation =
+"photoReveal 0.8s ease";
+
+
+photo.src =
+memories[index];
+
+
+document
+.getElementById("photoNumber")
+.innerHTML =
+(index + 1)
++ " / "
++ memories.length;
+
+
+if(index === memories.length - 1) {
+
+document
+.getElementById("nextPhoto")
+.innerHTML =
+"One Last Thing ❤️";
+
+} else {
+
+document
+.getElementById("nextPhoto")
+.innerHTML =
+"Next 💜";
+
+}
+
+}
+
+
+/* ==========================
+NEXT PHOTO
+========================== */
+
+document
+.getElementById("nextPhoto")
+.onclick = function() {
+
+
+if(currentMemory < memories.length - 1) {
+
+
+showMemory(
+currentMemory + 1
+);
+
+
+} else {
+
+
+document
+.getElementById("memoryArea")
+.style.display = "none";
+
+
+document
+.getElementById("finalMessage")
+.style.display = "block";
+
+}
+
+};
+
+
+/* ==========================
+LOVE LETTER
+========================== */
+
+function typeLetter() {
+
+
+var letter =
+document.getElementById("letterText");
+
+
+letter.innerHTML = "";
+
+
+var message =
+
+"Happy 1st Monthsary, Boss."
+
++ "\n\n"
+
++ "One month isn't a very long time, "
+
++ "but every day with you has been "
+
++ "one of the happiest days of my life."
+
++ "\n\n"
+
++ "Thank you for loving me, "
+
++ "for making me smile, "
+
++ "and for always being there."
+
++ "\n\n"
+
++ "I promise to keep choosing you, "
+
++ "to keep loving you, "
+
++ "and to make more beautiful memories "
+
++ "with you."
+
++ "\n\n"
+
++ "I love you so much, "
+
++ "Euzelle. ❤️";
+
+
+var i = 0;
+
+
+function write() {
+
+
+if(i < message.length) {
+
+
+if(message.charAt(i) === "\n") {
+
+letter.innerHTML += "<br>";
+
+} else {
+
+letter.innerHTML +=
+message.charAt(i);
+
+}
+
+
+i++;
+
+
+setTimeout(
+write,
+35
+);
+
+}
+
+}
+
+
+write();
+
+}
+
+</script>
+
+</body>
+
+</html>
